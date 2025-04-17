@@ -1,0 +1,242 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Site Metas -->
+<title>Suicide Attempt Review</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Site Icons -->
+<link rel="shortcut icon" href="{% static 'stop_suicide.png' %}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{% static 'stop_suicide.png' %}">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<!-- Colors CSS -->
+<link rel="stylesheet" href="{% static 'css/colors.css' %}">
+<!-- ALL VERSION CSS -->
+<link rel="stylesheet" href="{% static 'css/versions.css' %}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: rgb(251, 249, 249); /* Soft light blue for subtle background contrast */
+    }
+    
+    .header {
+        color: rgb(241, 232, 232);
+        padding: 30px;
+    }
+    .navbar-brand
+    {
+        text-align: left;
+        
+    }
+    
+    .navbar {
+        background: #323778; /* Deep blue for navbar */
+        text-align: center;
+    }
+    
+    .navbar a {
+        color: #ecf0f1; /* Light text for navbar links */
+    }
+    
+    .navbar a:hover {
+        background: #ff7e5f; /* Warm orange-red hover */
+        color: white;
+    }
+    
+    .all-page-title {
+        background-image: url('static\stop_suicide.png'); /* Use a vibrant background image */
+        background-size: cover;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+        box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3); /* Dark overlay for better text contrast */
+    }
+    
+    .all-page-title h1 {
+        font-size: 3rem; /* Bigger title */
+        color: #ffffff; /* Ensure the title text is clear on a colorful background */
+    }
+    
+    .content {
+        padding: 30px;
+        background: #dcd0d0; /* Clean white content background */
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* More prominent shadow for a polished look */
+        margin: 30px auto;
+        max-width: 900px; /* Increased width for more content space */
+    }
+    
+    .content h2 {
+        color: #150f18; /* Bright purple for headings */
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .content p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        color: #2c3e50; /* Darker text color for readability */
+    }
+    
+    .content ul {
+        list-style: disc;
+        padding-left: 20px;
+        color: #2c3e50; /* Dark text for list items */
+    }
+    
+    .content ul li {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    
+    .footer {
+        background: linear-gradient(45deg, #2c3e50, #34495e); /* Gradient footer */
+        color: #ecf0f1; /* Light text on dark background */
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px; /* Increased space above footer */
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for footer */
+    }
+    
+    .footer p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #ecf0f1;
+    }
+    
+    /* Scroll-to-top button */
+    #scroll-to-top {
+        background-color: #9b59b6; /* Bright purple for scroll button */
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+    }
+    
+    #scroll-to-top i {
+        font-size: 24px;
+        line-height: 45px;
+    }
+    
+    #scroll-to-top:hover {
+        background-color: #ff7e5f; /* Orange-red hover effect */
+    }
+    .nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Subtle background on hover */
+    transform: translateY(-3px); /* Slight upward movement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+    </style>
+
+</head>
+<body class="seo_version">
+
+
+
+<header class="header header_style_01">
+    <nav class="megamenu navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                
+                <a class="navbar-brand" ><h1>Suicide Attempt Review</h1></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left menu-top" style="display: flex; gap: 20px; list-style-type: none; align-content: end;">
+                    <a href="{% url 'index' %}" style="text-decoration: none; color: #fff; font-size: 1.2em; transition: all 0.3s ease;">
+                        <span style="transform: rotate(-10deg); display: inline-block;">🏠</span> Home
+                    </a>
+                    <a href="{% url 'UserLogin' %}" style="text-decoration: none; color: #fff; font-size: 1.2em; transition: all 0.3s ease;">
+                        <span style="transform: rotate(-10deg); display: inline-block;">👤</span> User
+                    </a>
+                    <a href="{% url 'AdminLogin' %}" style="text-decoration: none; color: #fff; font-size: 1.2em; transition: all 0.3s ease;">
+                        <span style="transform: rotate(-10deg); display: inline-block;">🔐</span> Admin
+                    </a>
+                    <a href="{% url 'UserRegisterForm' %}" style="text-decoration: none; color: #fff; font-size: 1.2em; transition: all 0.3s ease;">
+                        <span style="transform: rotate(-10deg); display: inline-block;">📝</span> Registration
+                    </a>
+                </ul>
+                
+                
+            </div>
+        </div>
+    </nav>
+</header>
+
+<br>
+<br>
+<br>
+<!-- Page Content -->
+
+<!-- Page Content -->
+<div class="content">
+    <h2>Understanding Suicide Risks</h2>
+    <p>Suicide is a serious public health issue that affects individuals and families across all communities. Understanding the risks and signs can help us provide support to those in need.</p>
+
+    <h2>Signs to Look For</h2>
+    <ul>
+        <li>Talking about wanting to die or to kill themselves</li>
+        <li>Feeling hopeless or having no reason to live</li>
+        <li>Feeling trapped or in unbearable pain</li>
+        <li>Being a burden to others</li>
+        <li>Withdrawing from friends, family, or society</li>
+    </ul>
+
+    <h2>How to Help</h2>
+    <p>If you or someone you know is struggling, please reach out for help. Here are some resources:</p>
+    <ul>
+        <li><strong>National Suicide Prevention Lifeline:</strong> 1-800-273-TALK (1-800-273-8255)</li>
+        <li><strong>Crisis Text Line:</strong> Text "HELLO" to 741741</li>
+        <li><strong>Emergency Services:</strong> Dial 911</li>
+    </ul>
+
+    <h2>Support is Available</h2>
+    <p>It's essential to understand that help is available, and you are not alone. Reach out to a trusted friend, family member, or professional for support.</p>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Suicide Attempt Review. All rights reserved @MslCorporations</p>
+</footer>
+
+<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+<!-- ALL JS FILES -->
+<script src="{% static 'js/all.js' %}"></script>
+<!-- ALL PLUGINS -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

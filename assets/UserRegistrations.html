@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">  
+            <div class="col-lg-6 m-auto">
+                <h1 class="h3" style="color:orange;">User Register Form</h1>
+                <h2 class="h3" >Please enter Valid details carefully</h2><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4"></div>
+            <div class="col-12 col-md-4 mb-4" align="center">
+                <div class="card h-100 p-3">
+                    <form action="/UserRegister" method="POST" class="text-primary" style="width: 100%;">
+                        {% csrf_token %}
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                          Enter your Name  <input type="text" class="form-control" name="name" required placeholder="Enter Your Name" minlength="2">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                        Enter Login id    <input type="text" class="form-control" name="loginid" required placeholder="Enter Login ID" pattern="[a-zA-Z0-9]{3,}">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                          Enter Password  <input type="password" class="form-control" name="pswd" required placeholder="Enter Password" minlength="6">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                        Enter Email address    <input type="email" class="form-control" name="email" required placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                         Enter mobile number   <input type="text" class="form-control" name="mobile" required placeholder="Enter Mobile Number" pattern="^\d{10}$">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                        Enter State:    <input type="text" class="form-control" name="state" required placeholder="Enter State">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                         Enter Location   <input type="text" class="form-control" name="location" required placeholder="Enter Location">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    
+                            <tr>
+                                <td style="padding: 20px;">
+                                    <button class="btn btn-block btn-primary text-white py-3 px-5" type="submit">
+                                        Register
+                                    </button>
+                                </td>
+                                
+                            </tr>
+                    
+                            {% if messages %}
+                            <tr>
+                                <td colspan="2">
+                                    <div class="alert alert-success">
+                                        {% for message in messages %}
+                                        <font color='green'>{{ message }}</font>
+                                        {% endfor %}
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endif %}
+                        </table>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4"></div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

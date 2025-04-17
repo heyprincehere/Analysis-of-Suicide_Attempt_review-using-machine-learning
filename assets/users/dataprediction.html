@@ -1,0 +1,30 @@
+{% extends 'users/UserHome.html'%}
+{%block contents%}
+
+ <section id="intro">   
+    <div class="intro-text">
+      <p><h3 align="center" style="color:orange;">Predict The form.....</h3></p>
+        <center>
+        <h3>Given input values :: {{country}} , {{year}} , {{age}}
+          <br>predect Result is <font color="RED">{{result}}</font></h3>
+        </br>
+        <form action="/suicide_predict" class="control-form" method="post">
+            {%csrf_token%}
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country">
+
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year">
+
+            <label for="age">Age Group:</label>
+            <input type="text" id="age" name="age" >
+
+            <tr><td></td><td><button type="submit" class="btn-primary">Submit</button> </td></tr>
+            </table>
+        </form>
+
+
+        </center>
+    </div>
+  </section>
+{%endblock%}
